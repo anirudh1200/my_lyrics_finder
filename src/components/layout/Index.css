@@ -8,8 +8,7 @@
 }
 @media screen and (max-width: 600px) {
     #frontPic{
-        position:fixed;
-        left: -40%;
+        margin-left: -40%;
     }
     img#frontPic{
         max-height:100%;

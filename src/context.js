@@ -10,7 +10,8 @@ export class Provider extends Component{
     }
 
     componentDidMount(){
-        axios.get(`https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=in&apikey=${process.env.REACT_APP_MM_KEY}`)
+        // https://cors-anywhere.herokuapp.com/ for allowing cors
+        axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=in&apikey=${process.env.REACT_APP_MM_KEY}`)
             .then(res => {
                 console.log(res);
                 this.setState({ song_list: res.data.message.body.track_list });

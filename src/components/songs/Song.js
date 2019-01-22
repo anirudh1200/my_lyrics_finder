@@ -6,18 +6,13 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import grey from '@material-ui/core/colors/grey';
+import Icon from '@material-ui/core/Icon';
+import Grid from '@material-ui/core/Grid';
 
 const styles = {
   card: {
-    margin: '10px 25%',
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
+    margin: '20px 5%',
   },
   pos: {
     marginBottom: 12,
@@ -26,24 +21,30 @@ const styles = {
 
 function Song(props) {
   const { classes, song } = props;
+  const textColor = grey[900];
   console.log(song);
   return (
-    <Card className={classes.card} raised={true}>
-      <CardContent>
-        <Typography variant="h5" component="h2">
-            { song.track_name }
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          { song.album_name }
-        </Typography>
-        <Typography component="p">
-          { song.artist_name }
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <Grid item xs={12} sm={6}>
+        <Card className={classes.card} raised={true}>
+          <CardContent>
+            <Typography variant="h6" style={{lineHeight: '1.25'}} gutterBottom>
+                { song.track_name }
+            </Typography>
+            <Typography className={classes.pos} color="textSecondary">
+              { song.album_name }
+            </Typography>
+            <Typography component="p">
+              { song.artist_name }
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small" fullWidth={true} style={{background: textColor}} variant="contained" color="primary">
+                <Icon>chevron_right</Icon>
+                View Lyrics
+            </Button>
+          </CardActions>
+        </Card>
+    </Grid>
   );
 }
 

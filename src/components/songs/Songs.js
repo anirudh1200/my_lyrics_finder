@@ -4,6 +4,7 @@ import Spinner from '../layout/Spinner';
 import Song from './Song';
 import Typography from '@material-ui/core/Typography';
 import grey from '@material-ui/core/colors/grey';
+import Grid from '@material-ui/core/Grid';
 
 class Songs extends Component{
     render(){
@@ -19,9 +20,11 @@ class Songs extends Component{
                                 <Typography variant='h4' align='center' style={{color: textColor}}>
                                     { heading }
                                 </Typography>
+                                <Grid container spacing={8}>
                                     {song_list.map(item => {
                                         return <Song key={item.track.track_id} song={item.track}/>
                                     })}
+                                </Grid>
                             </Fragment>
                         );
                     }else{
