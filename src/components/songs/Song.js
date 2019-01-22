@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -38,10 +39,12 @@ function Song(props) {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" fullWidth={true} style={{background: textColor}} variant="contained" color="primary">
-                <Icon>chevron_right</Icon>
-                View Lyrics
-            </Button>
+            <Link to='/lyrics' style={{width: '100%', textDecoration: 'none'}}>
+                <Button size="small" fullWidth={true} style={{background: textColor}} variant="contained" color="primary">
+                        <Icon>chevron_right</Icon>
+                        View Lyrics
+                </Button>
+            </Link>
           </CardActions>
         </Card>
     </Grid>

@@ -22,7 +22,7 @@ class Songs extends Component{
                                 </Typography>
                                 <Grid container spacing={8}>
                                     {song_list.map(item => {
-                                        return <Song key={item.track.track_id} song={item.track}/>
+                                        return <Song key={item.track.track_id} song={item.track} setRedirect={this.setRedirect} />
                                     })}
                                 </Grid>
                             </Fragment>
